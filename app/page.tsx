@@ -1,23 +1,15 @@
 'use client'
-import Image from 'next/image'
+
 import { useState } from 'react';
+import Image from 'next/image'
 
+import images from './ImageList';
+import Slider1 from './components/Slider1';
 
-const images = [
-  "/img/1.png",
-  "/img/2.png",
-  "/img/3.png",
-  "/img/4.jpg",
-  "/img/5.jpg",
-  "/img/6.jpg",
-];
 
 export default function Home() {
 
   const [currentIndex,setCurrentIndex] = useState(0);
-
-  const [acalss, setAclass] = useState("left")
-
 
   const btnNext = ()=>{    
     setCurrentIndex((prevIndex)=>{
@@ -39,39 +31,37 @@ export default function Home() {
     })
   }
 
-
-  const handleActiv = ()=>{
-    setAclass("")
-  }
+  const prevImageIndex = images[currentIndex >0 ? currentIndex-1 : images.length-1];
+  const nextImageIndex = images[currentIndex + 1 <images.length ? currentIndex+1 : 0];
 
   return (
-    <main className=''>
-      <header className='px-4 bg-slate-800'>
-        <ul className='flex [&>*]:p-2 text-xl select-none [&>*:hover]:bg-slate-600 text-white'>
-          <li onClick={handleActiv}>sliders</li>
-          <li>pop</li>
-        </ul>
-      </header>
-      <div className="relative rounded-3xl overflow-hidden h-[300px]">
-
-        <Image
-          className={`block ${acalss} image`}
-          src={images[currentIndex]}
-          alt="image"
-          width={1000}
-          height={1000}
-          sizes='100%'
-        />
-
-        <div className='absolute inset-0 flex justify-between'>
-          <button className='p-4 basis-1/3 flex items-center' onClick={btnBack}>
-            <span className='p-2 text-black text-sm sm:text-2xl bg-white rounded-2xl'>BACK</span>
-          </button>
-          <button className='p-4 basis-1/3 flex items-center justify-end' onClick={btnNext}>
-            <span className='p-2 text-black text-sm sm:text-2xl bg-white rounded-2xl'>NEXT</span>
-          </button>
+    <main className='bg-slate-300 min-h-screen'>
+      <header className='px-4 flex justify-between bg-slate-900'>
+        <div className='flex flex-1 justify-between m-auto max-w-[var(--max-width)]'>
+          <ul className='flex [&>*]:p-2 text-xl select-none [&>*:hover]:bg-slate-600 text-white'>
+            <li>sliders</li>
+            <li>pop</li>
+          </ul>
         </div>
+      </header>
+
+      <div className="m-auto max-w-[var(--max-width)]">
+        <p className='m-2 mt-4 p-2 bg-slate-500 text-white rounded-2xl'>
+          В данном примере я создал кастомный slider без использования сторонних библиотек.
+        </p>
+
+        <div className='m-2 bg-slate-600 rounded-2xl'>
+          <p className='px-2 pt-2 text-white'>№1 протостой slider</p>
+          <Slider1/>
+        </div>
+
+
+
       </div>
+
+      <footer>
+
+      </footer>
     </main>
   )
 }
