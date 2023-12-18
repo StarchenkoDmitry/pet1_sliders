@@ -5,25 +5,25 @@ import Image from 'next/image'
 import images from '../ImageList'
 
 
-function Slider1() {    
+function Slider1() {
     const [index,setIndex] = useState(0);
 
-    const handlerNext = ()=>{    
+    const handlerNext = ()=>{
         setIndex((prevIndex)=>{
             if(prevIndex + 1 < images.length){
-            return prevIndex + 1;
+                return prevIndex + 1;
             }else{
-            return 0;
+                return 0;
             }
         })
     }
     
-    const handlerBack = ()=>{    
+    const handlerBack = ()=>{
         setIndex((prevIndex)=>{
             if(prevIndex - 1 >= 0){
-            return prevIndex - 1;
+                return prevIndex - 1;
             }else{
-            return images.length -1;
+                return images.length -1;
             }
         })
     }
