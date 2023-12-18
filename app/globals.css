@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  --index: calc(1vw+1vh);
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -16,7 +17,7 @@
   }
 }
 
-body {
+/* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,4 +25,15 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+
+
+.image{
+  transition-property: all;
+  transition-duration: 500ms;
+}
+
+.left{
+  transform: translateX(-80%);
 }
