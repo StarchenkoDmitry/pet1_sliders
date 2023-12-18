@@ -40,10 +40,10 @@ function Slider1() {
                 sizes='10%'
             />
             <button className='absolute left-0 w-1/3 h-full flex items-center bob:hover:bg-gradient-to-r from-[rgba(0,0,0,0.8)]' onClick={handlerBack}>
-                <span className='ml-4 p-2 text-sm sm:text-lg bg-white text-black rounded-xl shadow-md'>Back</span>
+                <span className='ml-4 p-2 text-sm sm:text-lg bg-white text-black rounded-xl shadow-md select-none'>Back</span>
             </button>
             <button className='absolute right-0 w-1/3 h-full flex items-center justify-end bob:hover:bg-gradient-to-l from-[rgba(0,0,0,0.8)]' onClick={handlerNext}>
-                <span className='mr-4 p-2 text-sm sm:text-lg bg-white text-black rounded-xl shadow-md'>Next</span>
+                <span className='mr-4 p-2 text-sm sm:text-lg bg-white text-black rounded-xl shadow-md select-none'>Next</span>
             </button>
         </div>
     )
