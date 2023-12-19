@@ -1,9 +1,10 @@
-import type { Metadata } from 'next'
 import './globals.css'
+
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'My custom sliders',
-  description: '',
+  description: 'this is page with my custom sliders',
 }
 
 export default function RootLayout({
